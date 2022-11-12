@@ -1,4 +1,4 @@
-# contabilidade-vue
+# Client-Manager Vue
 
 ## Project setup
 ```
