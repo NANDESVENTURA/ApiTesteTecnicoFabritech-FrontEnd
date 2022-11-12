@@ -126,7 +126,6 @@ export default {
             })
         },
         async getClients() {
-            // const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjY4MDA2NDAxLCJleHAiOjE2Njg2MTEyMDF9.NFUlBS_dJHualP1N1nD4I4JfEOaYvaMSl43oNWzI9t4'
             const token = this.$store.getters.token
             const headers = {
                 headers: { Authorization: `Bearer ${token}` }
@@ -141,7 +140,6 @@ export default {
         async editClient(id) {
             const headers = {
                 headers: {
-                    //Authorization: 'Bearer ' + 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjY4MDA2NDAxLCJleHAiOjE2Njg2MTEyMDF9.NFUlBS_dJHualP1N1nD4I4JfEOaYvaMSl43oNWzI9t4'
                     Authorization: 'Bearer ' + this.$store.getters.token
                 }
             }

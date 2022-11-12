@@ -129,12 +129,8 @@ export default {
         editClientData: Object
     },
     watch: {
-        // whenever question changes, this function will run
         cep: function (newCep, oldCep) {
-          // console.log(newCep, oldCep);
-            //if (!newCep == oldCep){
                 this.getCep(newCep)
-            //}
         }
     },
     methods: {
@@ -156,7 +152,6 @@ export default {
         },
         async getCep (cepDigited) {
             const { data: information } = await axios.get(`http://viacep.com.br/ws/${cepDigited}/json`)
-            console.log('Informacao', information)
             if (!information.error) {
                 this.rua = information.logradouro
                 this.cidade = information.localidade
@@ -166,22 +161,6 @@ export default {
         },
 
         async editClient() {
-
-            // const data = {
-                // name: this.nome,
-                // email: this.email,
-                // telephone: this.telefone,
-                // cpf: this.cpf,
-                // birth_date: this.nascimento,
-                // mother_name: this.nomeMae,
-                // father_name: this.nomePai,
-                // cep: this.cep,
-                // address: this.rua,
-                // number: this.numero,
-                // district: this.bairro,
-                // city: this.cidade,
-                // state: this.estado
-            // }
             const data = {
                     name: this.nome,
                     email: this.email,
@@ -199,7 +178,6 @@ export default {
                 }
             const headers = {
                 headers: {
-                    //Authorization: 'Bearer ' + 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjY4MDA2NDAxLCJleHAiOjE2Njg2MTEyMDF9.NFUlBS_dJHualP1N1nD4I4JfEOaYvaMSl43oNWzI9t4'
                     Authorization: 'Bearer ' + this.$store.getters.token
                 }
             }

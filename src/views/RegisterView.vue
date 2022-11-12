@@ -62,7 +62,6 @@ export default {
         password: this.password
       }
 
-      // axios.post('https://contabilidade-unit.herokuapp.com/auth/register', data)
       axios.post('http://localhost:3000/user', {
         email: this.email,
         name: this.name,
